@@ -181,8 +181,8 @@
               <h2 class="text-4xl font-semibold text-white">What you didn't know</h2>
               <p class="text-lg leading-relaxed mt-4 mb-4 text-gray-500">
                 We at Drdre Fitness are focused on pushing you to your absolute limit
-                Register with us now. 
               </p>
+              <NavLink href="/register">
                 <button
                 class="bg-white text-gray-800 active:bg-indigo-700 text-xs font-bold uppercase px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none lg:mr-1 lg:mb-0 ml-3 mb-3"
                 type="button"
@@ -190,6 +190,7 @@
                 >
                  Register
               </button>
+              </NavLink>
             </div>
           </div>
           <div class="flex flex-wrap mt-12 justify-center">
@@ -356,7 +357,8 @@
 
 <script>
 import Nav from '../Shared/Nav';
+import NavLink from '../Shared/NavLink';
 export default {
-   components : {Nav},
+   components : {Nav, NavLink},
 };
 </script>

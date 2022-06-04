@@ -8,12 +8,12 @@
     <script src="{{ mix('/js/app.js') }}" defer></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://kit.fontawesome.com/87fe01986c.js" crossorigin="anonymous"></script>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @inertiaHead
   </head>
   <body style="font-family: 'Roboto Flex';">
       <section class="">
          @inertia
       </section>
-    
   </body>
 </html>
