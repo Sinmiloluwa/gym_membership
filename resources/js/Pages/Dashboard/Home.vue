@@ -80,7 +80,7 @@
                             Date
                           </h5>
                           <p class="font-semibold text-xl text-blueGray-700 demo" id="demo">
-                            hi
+                            
                           </p>
                         </div>
                         <div class="relative w-auto pl-4 flex-initial">
@@ -89,14 +89,14 @@
                           </div>
                         </div>
                       </div>
-                        <p class="text-sm text-blueGray-400 mt-4">
+                        <!-- <p class="text-sm text-blueGray-400 mt-4">
                         <span class="text-emerald-500 mr-2">
                           <i class="fas fa-arrow-up"></i> 3.48%
                         </span>
                         <span class="whitespace-nowrap">
                           Since last month
                         </span>
-                      </p>
+                      </p> -->
                     </div>
                   </div>
                 </div>
@@ -106,10 +106,10 @@
                       <div class="flex flex-wrap">
                         <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
                           <h5 class="text-blueGray-400 uppercase font-bold text-xs">
-                            New users
+                            Instructor
                           </h5>
-                          <span class="font-semibold text-xl text-blueGray-700">
-                            2,356
+                          <span class="font-semibold text-sm text-blueGray-700">
+                            James Milner
                           </span>
                         </div>
                         <div class="relative w-auto pl-4 flex-initial">
@@ -118,14 +118,14 @@
                           </div>
                         </div>
                       </div>
-                      <p class="text-sm text-blueGray-400 mt-4">
+                      <!-- <p class="text-sm text-blueGray-400 mt-4">
                         <span class="text-red-500 mr-2">
                           <i class="fas fa-arrow-down"></i> 3.48%
                         </span>
                         <span class="whitespace-nowrap">
                           Since last week
                         </span>
-                      </p>
+                      </p> -->
                     </div>
                   </div>
                 </div>
@@ -135,10 +135,10 @@
                       <div class="flex flex-wrap">
                         <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
                           <h5 class="text-blueGray-400 uppercase font-bold text-xs">
-                            Sales
+                            Hours Spent
                           </h5>
                           <span class="font-semibold text-xl text-blueGray-700">
-                            924
+                            140
                           </span>
                         </div>
                         <div class="relative w-auto pl-4 flex-initial">
@@ -147,14 +147,14 @@
                           </div>
                         </div>
                       </div>
-                      <p class="text-sm text-blueGray-400 mt-4">
+                      <!-- <p class="text-sm text-blueGray-400 mt-4">
                         <span class="text-orange-500 mr-2">
                           <i class="fas fa-arrow-down"></i> 1.10%
                         </span>
                         <span class="whitespace-nowrap">
                           Since yesterday
                         </span>
-                      </p>
+                      </p> -->
                     </div>
                   </div>
                 </div>
@@ -206,13 +206,13 @@
                         Overview
                       </h6>
                       <h2 class="text-white text-xl font-semibold">
-                        Sales value
+                        Subscription
                       </h2>
                     </div>
                   </div>
                 </div>
                 <div class="p-4 flex-auto">
-                  <!-- Chart -->
+                  <h3>Graph goes here. Details on subscription</h3>
                   <div class="relative" style="height:350px">
                     <canvas id="line-chart"></canvas>
                   </div>
@@ -229,10 +229,10 @@
                       <h6
                         class="uppercase text-blueGray-400 mb-1 text-xs font-semibold"
                       >
-                        Performance
+                        Routine
                       </h6>
                       <h2 class="text-blueGray-700 text-xl font-semibold">
-                        Total orders
+                        
                       </h2>
                     </div>
                   </div>
@@ -246,7 +246,7 @@
               </div>
             </div>
           </div>
-          <div class="flex flex-wrap mt-4">
+          <!-- <div class="flex flex-wrap mt-4">
             <div class="w-full xl:w-8/12 mb-12 xl:mb-0 px-4">
               <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded">
                 <div class="rounded-t mb-0 px-4 py-3 border-0">
@@ -268,8 +268,8 @@
                   </div>
                 </div>
                 <div class="block w-full overflow-x-auto">
-                  <!-- Projects table -->
-                  <table class="items-center w-full bg-transparent border-collapse">
+                   Projects table -->
+                  <!-- <table class="items-center w-full bg-transparent border-collapse">
                     <thead>
                       <tr>
                         <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
@@ -388,8 +388,8 @@
                   </div>
                 </div>
                 <div class="block w-full overflow-x-auto">
-                  <!-- Projects table -->
-                  <table class="items-center w-full bg-transparent border-collapse">
+                   Projects table -->
+                  <!-- <table class="items-center w-full bg-transparent border-collapse">
                     <thead class="thead-light">
                       <tr>
                         <th class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left">
@@ -511,80 +511,37 @@
                         </td>
                       </tr>
                     </tbody>
-                  </table>
+                  </table> -->
                 </div>
               </div>
-            </div>
-          </div>
-          <footer class="block py-4">
-            <div class="container mx-auto px-4">
-              <hr class="mb-4 border-b-1 border-blueGray-200" />
-              <div class="flex flex-wrap items-center md:justify-between justify-center">
-                <div class="w-full md:w-4/12 px-4">
-                  <div class="text-sm text-blueGray-500 font-semibold py-1">
-                    Copyright © <span id="javascript-date"></span>
-                    <a
-                      href="https://www.creative-tim.com"
-                      class="text-blueGray-500 hover:text-blueGray-700 text-sm font-semibold py-1"
-                    >
-                      Creative Tim
-                    </a>
-                  </div>
-                </div>
-                <div class="w-full md:w-8/12 px-4">
-                  <ul class="flex flex-wrap list-none md:justify-end  justify-center">
-                    <li>
-                      <a
-                        href="https://www.creative-tim.com"
-                        class="text-blueGray-600 hover:text-blueGray-800 text-sm font-semibold block py-1 px-3"
-                      >
-                        Creative Tim
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://www.creative-tim.com/presentation"
-                        class="text-blueGray-600 hover:text-blueGray-800 text-sm font-semibold block py-1 px-3"
-                      >
-                        About Us
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="http://blog.creative-tim.com"
-                        class="text-blueGray-600 hover:text-blueGray-800 text-sm font-semibold block py-1 px-3"
-                      >
-                        Blog
-                      </a>
-                    </li>
-                    <li>
-                      <a
-                        href="https://github.com/creativetimofficial/tailwind-starter-kit/blob/main/LICENSE.md"
-                        class="text-blueGray-600 hover:text-blueGray-800 text-sm font-semibold block py-1 px-3"
-                      >
-                        MIT License
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </footer>
-        </div>
-      </div>
-    Dashboard {{user.firstname}}
+            <!-- </div> -->
+          <!-- </div>  -->
+          
 </template>
 
-<script setup>
-import Nav from './Nav';
 
+<script>
+import Nav from './Nav';
+import Footer from './Footer';
+import NavLink from '../../Shared/NavLink';
+export default {
+   components : {Nav, NavLink},
+}
+
+
+</script>
+
+<script setup>
+import { onMounted } from 'vue';
 defineProps({
     user : String
 });
 
-const d = new Date();
-const span = document.getElementsByClassName("demo").innerHTML;
-console.log(span);
+onMounted(() => {
+  const d = new Date();
+  const month = d.getMonth() + 1;
+  const span = document.getElementById("demo").textContent = d.getFullYear()+'-' + month + '-' + d.getDate();
+})
 </script>
 <script>
 

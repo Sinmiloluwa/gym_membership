@@ -19426,22 +19426,37 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Nav */ "./resources/js/Pages/Dashboard/Nav.vue");
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Nav */ "./resources/js/Pages/Dashboard/Nav.vue");
+/* harmony import */ var _Footer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Footer */ "./resources/js/Pages/Dashboard/Footer.vue");
+/* harmony import */ var _Shared_NavLink__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Shared/NavLink */ "./resources/js/Shared/NavLink.vue");
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+
+
+
+var __default__ = {
+  components: {
+    Nav: _Nav__WEBPACK_IMPORTED_MODULE_1__["default"],
+    NavLink: _Shared_NavLink__WEBPACK_IMPORTED_MODULE_3__["default"]
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/Object.assign(__default__, {
   props: {
     user: String
   },
   setup: function setup(__props, _ref) {
     var expose = _ref.expose;
     expose();
-    var d = new Date();
-    var span = document.getElementsByClassName("demo").innerHTML;
-    console.log(span);
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(function () {
+      var d = new Date();
+      var month = d.getMonth() + 1;
+      var span = document.getElementById("demo").textContent = d.getFullYear() + '-' + month + '-' + d.getDate();
+    });
     var __returned__ = {
-      d: d,
-      span: span,
-      Nav: _Nav__WEBPACK_IMPORTED_MODULE_0__["default"]
+      Nav: _Nav__WEBPACK_IMPORTED_MODULE_1__["default"],
+      Footer: _Footer__WEBPACK_IMPORTED_MODULE_2__["default"],
+      NavLink: _Shared_NavLink__WEBPACK_IMPORTED_MODULE_3__["default"],
+      onMounted: vue__WEBPACK_IMPORTED_MODULE_0__.onMounted
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -19449,7 +19464,115 @@ __webpack_require__.r(__webpack_exports__);
     });
     return __returned__;
   }
+}));
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Nav.vue?vue&type=script&lang=js":
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Nav.vue?vue&type=script&lang=js ***!
+  \**************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Shared_NavLink__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../Shared/NavLink */ "./resources/js/Shared/NavLink.vue");
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  components: {
+    NavLink: _Shared_NavLink__WEBPACK_IMPORTED_MODULE_0__["default"]
+  }
 });
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Subscription.vue?vue&type=script&setup=true&lang=js":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Subscription.vue?vue&type=script&setup=true&lang=js ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+/* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Nav */ "./resources/js/Pages/Dashboard/Nav.vue");
+/* harmony import */ var _Shared_NavLink__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Shared/NavLink */ "./resources/js/Shared/NavLink.vue");
+
+
+
+var __default__ = {
+  components: {
+    Nav: _Nav__WEBPACK_IMPORTED_MODULE_1__["default"],
+    NavLink: _Shared_NavLink__WEBPACK_IMPORTED_MODULE_2__["default"]
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/Object.assign(__default__, {
+  props: {
+    user: String
+  },
+  setup: function setup(__props, _ref) {
+    var expose = _ref.expose;
+    expose();
+    (0,vue__WEBPACK_IMPORTED_MODULE_0__.onMounted)(function () {
+      var d = new Date();
+      var month = d.getMonth() + 1;
+      var span = document.getElementById("demo").textContent = d.getFullYear() + '-' + month + '-' + d.getDate();
+      var Script = document.createElement("script");
+      Script.setAttribute("src", "https://js.paystack.co/v1/inline.js");
+      document.head.appendChild(Script);
+      var paymentForm = document.getElementById('payment');
+      paymentForm.addEventListener("click", payWithPaystack, false);
+
+      function payWithPaystack(e) {
+        e.preventDefault();
+        var handler = PaystackPop.setup({
+          key: 'pk_test_dabf38487d6752067458bbd68238b4b7c964d9bf',
+          // Replace with your public key
+          email: "emmasimons141@gmail.com",
+          amount: document.getElementById("price").innerText * 100,
+          ref: '' + Math.floor(Math.random() * 1000000000 + 1),
+          // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+          // label: "Optional string that replaces customer email"
+          onClose: function onClose() {
+            alert('Window closed.');
+          },
+          callback: function callback(response) {
+            var message = 'Payment complete! Reference: ' + response.reference;
+            alert(message);
+          }
+        });
+        handler.openIframe();
+        console.log(document.getElementById("price").innerText.split("₦"));
+      }
+
+      var form = reactive({
+        email: 'emmasimons141@gmail.com',
+        amount: document.getElementById("price").innerText * 100,
+        reference: response.reference
+      });
+
+      var submit = function submit() {
+        Inertia.post('/pay', form);
+      };
+    });
+    var __returned__ = {
+      Nav: _Nav__WEBPACK_IMPORTED_MODULE_1__["default"],
+      NavLink: _Shared_NavLink__WEBPACK_IMPORTED_MODULE_2__["default"],
+      onMounted: vue__WEBPACK_IMPORTED_MODULE_0__.onMounted
+    };
+    Object.defineProperty(__returned__, '__isScriptSetup', {
+      enumerable: false,
+      value: true
+    });
+    return __returned__;
+  }
+}));
 
 /***/ }),
 
@@ -19890,6 +20013,32 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Footer.vue?vue&type=template&id=08c69782":
+/*!*********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Footer.vue?vue&type=template&id=08c69782 ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "block py-4"
+};
+
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"container mx-auto px-4\"><hr class=\"mb-4 border-b-1 border-blueGray-200\"><div class=\"flex flex-wrap items-center md:justify-between justify-center\"><div class=\"w-full md:w-4/12 px-4\"><div class=\"text-sm text-blueGray-500 font-semibold py-1\"> Copyright © <span id=\"javascript-date\"></span><a href=\"https://www.creative-tim.com\" class=\"text-blueGray-500 hover:text-blueGray-700 text-sm font-semibold py-1\"> Creative Tim </a></div></div><div class=\"w-full md:w-8/12 px-4\"><ul class=\"flex flex-wrap list-none md:justify-end justify-center\"><li><a href=\"https://www.creative-tim.com\" class=\"text-blueGray-600 hover:text-blueGray-800 text-sm font-semibold block py-1 px-3\"> Creative Tim </a></li><li><a href=\"https://www.creative-tim.com/presentation\" class=\"text-blueGray-600 hover:text-blueGray-800 text-sm font-semibold block py-1 px-3\"> About Us </a></li><li><a href=\"http://blog.creative-tim.com\" class=\"text-blueGray-600 hover:text-blueGray-800 text-sm font-semibold block py-1 px-3\"> Blog </a></li><li><a href=\"https://github.com/creativetimofficial/tailwind-starter-kit/blob/main/LICENSE.md\" class=\"text-blueGray-600 hover:text-blueGray-800 text-sm font-semibold block py-1 px-3\"> MIT License </a></li></ul></div></div></div>", 1);
+
+var _hoisted_3 = [_hoisted_2];
+function render(_ctx, _cache) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("footer", _hoisted_1, _hoisted_3);
+}
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Home.vue?vue&type=template&id=e7f6b6fa":
 /*!*******************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Home.vue?vue&type=template&id=e7f6b6fa ***!
@@ -19932,14 +20081,12 @@ var _hoisted_9 = {
 
 var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1\" style=\"min-width:12rem;\" id=\"user-dropdown\"><a href=\"#pablo\" class=\"text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700\">Action</a><a href=\"#pablo\" class=\"text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700\">Another action</a><a href=\"#pablo\" class=\"text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700\">Something else here</a><div class=\"h-0 my-2 border border-solid border-blueGray-100\"></div><a href=\"#pablo\" class=\"text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700\">Seprated link</a></div>", 1);
 
-var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"relative bg-pink-600 md:pt-32 pb-32 pt-12\"><div class=\"px-4 md:px-10 mx-auto w-full\"><div><!-- Card stats --><div class=\"flex flex-wrap\"><div class=\"w-full lg:w-6/12 xl:w-3/12 px-4\"><div class=\"relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg\"><div class=\"flex-auto p-4\"><div class=\"flex flex-wrap\"><div class=\"relative w-full pr-4 max-w-full flex-grow flex-1\"><h5 class=\"text-blueGray-400 uppercase font-bold text-xs\"> Date </h5><p class=\"font-semibold text-xl text-blueGray-700 demo\" id=\"demo\"> hi </p></div><div class=\"relative w-auto pl-4 flex-initial\"><div class=\"text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-red-500\"><i class=\"far fa-chart-bar\"></i></div></div></div><p class=\"text-sm text-blueGray-400 mt-4\"><span class=\"text-emerald-500 mr-2\"><i class=\"fas fa-arrow-up\"></i> 3.48% </span><span class=\"whitespace-nowrap\"> Since last month </span></p></div></div></div><div class=\"w-full lg:w-6/12 xl:w-3/12 px-4\"><div class=\"relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg\"><div class=\"flex-auto p-4\"><div class=\"flex flex-wrap\"><div class=\"relative w-full pr-4 max-w-full flex-grow flex-1\"><h5 class=\"text-blueGray-400 uppercase font-bold text-xs\"> New users </h5><span class=\"font-semibold text-xl text-blueGray-700\"> 2,356 </span></div><div class=\"relative w-auto pl-4 flex-initial\"><div class=\"text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-orange-500\"><i class=\"fas fa-chart-pie\"></i></div></div></div><p class=\"text-sm text-blueGray-400 mt-4\"><span class=\"text-red-500 mr-2\"><i class=\"fas fa-arrow-down\"></i> 3.48% </span><span class=\"whitespace-nowrap\"> Since last week </span></p></div></div></div><div class=\"w-full lg:w-6/12 xl:w-3/12 px-4\"><div class=\"relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg\"><div class=\"flex-auto p-4\"><div class=\"flex flex-wrap\"><div class=\"relative w-full pr-4 max-w-full flex-grow flex-1\"><h5 class=\"text-blueGray-400 uppercase font-bold text-xs\"> Sales </h5><span class=\"font-semibold text-xl text-blueGray-700\"> 924 </span></div><div class=\"relative w-auto pl-4 flex-initial\"><div class=\"text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-pink-500\"><i class=\"fas fa-users\"></i></div></div></div><p class=\"text-sm text-blueGray-400 mt-4\"><span class=\"text-orange-500 mr-2\"><i class=\"fas fa-arrow-down\"></i> 1.10% </span><span class=\"whitespace-nowrap\"> Since yesterday </span></p></div></div></div><div class=\"w-full lg:w-6/12 xl:w-3/12 px-4\"><div class=\"relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg\"><div class=\"flex-auto p-4\"><div class=\"flex flex-wrap\"><div class=\"relative w-full pr-4 max-w-full flex-grow flex-1\"><h5 class=\"text-blueGray-400 uppercase font-bold text-xs\"> Performance </h5><span class=\"font-semibold text-xl text-blueGray-700\"> 49,65% </span></div><div class=\"relative w-auto pl-4 flex-initial\"><div class=\"text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-lightBlue-500\"><i class=\"fas fa-percent\"></i></div></div></div><p class=\"text-sm text-blueGray-400 mt-4\"><span class=\"text-emerald-500 mr-2\"><i class=\"fas fa-arrow-up\"></i> 12% </span><span class=\"whitespace-nowrap\"> Since last month </span></p></div></div></div></div></div></div></div><div class=\"px-4 md:px-10 mx-auto w-full -m-24\"><div class=\"flex flex-wrap\"><div class=\"w-full xl:w-8/12 mb-12 xl:mb-0 px-4\"><div class=\"relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-blueGray-800\"><div class=\"rounded-t mb-0 px-4 py-3 bg-transparent\"><div class=\"flex flex-wrap items-center\"><div class=\"relative w-full max-w-full flex-grow flex-1\"><h6 class=\"uppercase text-blueGray-100 mb-1 text-xs font-semibold\"> Overview </h6><h2 class=\"text-white text-xl font-semibold\"> Sales value </h2></div></div></div><div class=\"p-4 flex-auto\"><!-- Chart --><div class=\"relative\" style=\"height:350px;\"><canvas id=\"line-chart\"></canvas></div></div></div></div><div class=\"w-full xl:w-4/12 px-4\"><div class=\"relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded\"><div class=\"rounded-t mb-0 px-4 py-3 bg-transparent\"><div class=\"flex flex-wrap items-center\"><div class=\"relative w-full max-w-full flex-grow flex-1\"><h6 class=\"uppercase text-blueGray-400 mb-1 text-xs font-semibold\"> Performance </h6><h2 class=\"text-blueGray-700 text-xl font-semibold\"> Total orders </h2></div></div></div><div class=\"p-4 flex-auto\"><!-- Chart --><div class=\"relative\" style=\"height:350px;\"><canvas id=\"bar-chart\"></canvas></div></div></div></div></div><div class=\"flex flex-wrap mt-4\"><div class=\"w-full xl:w-8/12 mb-12 xl:mb-0 px-4\"><div class=\"relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded\"><div class=\"rounded-t mb-0 px-4 py-3 border-0\"><div class=\"flex flex-wrap items-center\"><div class=\"relative w-full px-4 max-w-full flex-grow flex-1\"><h3 class=\"font-semibold text-base text-blueGray-700\"> Page visits </h3></div><div class=\"relative w-full px-4 max-w-full flex-grow flex-1 text-right\"><button class=\"bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1\" type=\"button\" style=\"transition:all .15s ease;\"> See all </button></div></div></div><div class=\"block w-full overflow-x-auto\"><!-- Projects table --><table class=\"items-center w-full bg-transparent border-collapse\"><thead><tr><th class=\"px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left\"> Page name </th><th class=\"px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left\"> Visitors </th><th class=\"px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left\"> Unique users </th><th class=\"px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left\"> Bounce rate </th></tr></thead><tbody><tr><th class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left\"> /argon/ </th><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"> 4,569 </td><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"> 340 </td><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"><i class=\"fas fa-arrow-up text-emerald-500 mr-4\"></i> 46,53% </td></tr><tr><th class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left\"> /argon/index.html </th><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"> 3,985 </td><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"> 319 </td><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"><i class=\"fas fa-arrow-down text-orange-500 mr-4\"></i> 46,53% </td></tr><tr><th class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left\"> /argon/charts.html </th><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"> 3,513 </td><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"> 294 </td><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"><i class=\"fas fa-arrow-down text-orange-500 mr-4\"></i> 36,49% </td></tr><tr><th class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left\"> /argon/tables.html </th><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"> 2,050 </td><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"> 147 </td><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"><i class=\"fas fa-arrow-up text-emerald-500 mr-4\"></i> 50,87% </td></tr><tr><th class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left\"> /argon/profile.html </th><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"> 1,795 </td><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"> 190 </td><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"><i class=\"fas fa-arrow-down text-red-500 mr-4\"></i> 46,53% </td></tr></tbody></table></div></div></div><div class=\"w-full xl:w-4/12 px-4\"><div class=\"relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded\"><div class=\"rounded-t mb-0 px-4 py-3 border-0\"><div class=\"flex flex-wrap items-center\"><div class=\"relative w-full px-4 max-w-full flex-grow flex-1\"><h3 class=\"font-semibold text-base text-blueGray-700\"> Social traffic </h3></div><div class=\"relative w-full px-4 max-w-full flex-grow flex-1 text-right\"><button class=\"bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1\" type=\"button\" style=\"transition:all .15s ease;\"> See all </button></div></div></div><div class=\"block w-full overflow-x-auto\"><!-- Projects table --><table class=\"items-center w-full bg-transparent border-collapse\"><thead class=\"thead-light\"><tr><th class=\"px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left\"> Referral </th><th class=\"px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left\"> Visitors </th><th class=\"px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left\" style=\"min-width:140px;\"></th></tr></thead><tbody><tr><th class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left\"> Facebook </th><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"> 1,480 </td><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"><div class=\"flex items-center\"><span class=\"mr-2\">60%</span><div class=\"relative w-full\"><div class=\"overflow-hidden h-2 text-xs flex rounded bg-red-200\"><div style=\"width:60%;\" class=\"shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500\"></div></div></div></div></td></tr><tr><th class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left\"> Facebook </th><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"> 5,480 </td><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"><div class=\"flex items-center\"><span class=\"mr-2\">70%</span><div class=\"relative w-full\"><div class=\"overflow-hidden h-2 text-xs flex rounded bg-emerald-200\"><div style=\"width:70%;\" class=\"shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500\"></div></div></div></div></td></tr><tr><th class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left\"> Google </th><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"> 4,807 </td><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"><div class=\"flex items-center\"><span class=\"mr-2\">80%</span><div class=\"relative w-full\"><div class=\"overflow-hidden h-2 text-xs flex rounded bg-purple-200\"><div style=\"width:80%;\" class=\"shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-500\"></div></div></div></div></td></tr><tr><th class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left\"> Instagram </th><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"> 3,678 </td><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"><div class=\"flex items-center\"><span class=\"mr-2\">75%</span><div class=\"relative w-full\"><div class=\"overflow-hidden h-2 text-xs flex rounded bg-lightBlue-200\"><div style=\"width:75%;\" class=\"shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-lightBlue-500\"></div></div></div></div></td></tr><tr><th class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left\"> twitter </th><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"> 2,645 </td><td class=\"border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4\"><div class=\"flex items-center\"><span class=\"mr-2\">30%</span><div class=\"relative w-full\"><div class=\"overflow-hidden h-2 text-xs flex rounded bg-orange-200\"><div style=\"width:30%;\" class=\"shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500\"></div></div></div></div></td></tr></tbody></table></div></div></div></div><footer class=\"block py-4\"><div class=\"container mx-auto px-4\"><hr class=\"mb-4 border-b-1 border-blueGray-200\"><div class=\"flex flex-wrap items-center md:justify-between justify-center\"><div class=\"w-full md:w-4/12 px-4\"><div class=\"text-sm text-blueGray-500 font-semibold py-1\"> Copyright © <span id=\"javascript-date\"></span><a href=\"https://www.creative-tim.com\" class=\"text-blueGray-500 hover:text-blueGray-700 text-sm font-semibold py-1\"> Creative Tim </a></div></div><div class=\"w-full md:w-8/12 px-4\"><ul class=\"flex flex-wrap list-none md:justify-end justify-center\"><li><a href=\"https://www.creative-tim.com\" class=\"text-blueGray-600 hover:text-blueGray-800 text-sm font-semibold block py-1 px-3\"> Creative Tim </a></li><li><a href=\"https://www.creative-tim.com/presentation\" class=\"text-blueGray-600 hover:text-blueGray-800 text-sm font-semibold block py-1 px-3\"> About Us </a></li><li><a href=\"http://blog.creative-tim.com\" class=\"text-blueGray-600 hover:text-blueGray-800 text-sm font-semibold block py-1 px-3\"> Blog </a></li><li><a href=\"https://github.com/creativetimofficial/tailwind-starter-kit/blob/main/LICENSE.md\" class=\"text-blueGray-600 hover:text-blueGray-800 text-sm font-semibold block py-1 px-3\"> MIT License </a></li></ul></div></div></div></footer></div>", 2);
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"relative bg-pink-600 md:pt-32 pb-32 pt-12\"><div class=\"px-4 md:px-10 mx-auto w-full\"><div><!-- Card stats --><div class=\"flex flex-wrap\"><div class=\"w-full lg:w-6/12 xl:w-3/12 px-4\"><div class=\"relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg\"><div class=\"flex-auto p-4\"><div class=\"flex flex-wrap\"><div class=\"relative w-full pr-4 max-w-full flex-grow flex-1\"><h5 class=\"text-blueGray-400 uppercase font-bold text-xs\"> Date </h5><p class=\"font-semibold text-xl text-blueGray-700 demo\" id=\"demo\"></p></div><div class=\"relative w-auto pl-4 flex-initial\"><div class=\"text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-red-500\"><i class=\"far fa-chart-bar\"></i></div></div></div><!-- &lt;p class=&quot;text-sm text-blueGray-400 mt-4&quot;&gt;\r\n                        &lt;span class=&quot;text-emerald-500 mr-2&quot;&gt;\r\n                          &lt;i class=&quot;fas fa-arrow-up&quot;&gt;&lt;/i&gt; 3.48%\r\n                        &lt;/span&gt;\r\n                        &lt;span class=&quot;whitespace-nowrap&quot;&gt;\r\n                          Since last month\r\n                        &lt;/span&gt;\r\n                      &lt;/p&gt; --></div></div></div><div class=\"w-full lg:w-6/12 xl:w-3/12 px-4\"><div class=\"relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg\"><div class=\"flex-auto p-4\"><div class=\"flex flex-wrap\"><div class=\"relative w-full pr-4 max-w-full flex-grow flex-1\"><h5 class=\"text-blueGray-400 uppercase font-bold text-xs\"> Instructor </h5><span class=\"font-semibold text-sm text-blueGray-700\"> James Milner </span></div><div class=\"relative w-auto pl-4 flex-initial\"><div class=\"text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-orange-500\"><i class=\"fas fa-chart-pie\"></i></div></div></div><!-- &lt;p class=&quot;text-sm text-blueGray-400 mt-4&quot;&gt;\r\n                        &lt;span class=&quot;text-red-500 mr-2&quot;&gt;\r\n                          &lt;i class=&quot;fas fa-arrow-down&quot;&gt;&lt;/i&gt; 3.48%\r\n                        &lt;/span&gt;\r\n                        &lt;span class=&quot;whitespace-nowrap&quot;&gt;\r\n                          Since last week\r\n                        &lt;/span&gt;\r\n                      &lt;/p&gt; --></div></div></div><div class=\"w-full lg:w-6/12 xl:w-3/12 px-4\"><div class=\"relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg\"><div class=\"flex-auto p-4\"><div class=\"flex flex-wrap\"><div class=\"relative w-full pr-4 max-w-full flex-grow flex-1\"><h5 class=\"text-blueGray-400 uppercase font-bold text-xs\"> Hours Spent </h5><span class=\"font-semibold text-xl text-blueGray-700\"> 140 </span></div><div class=\"relative w-auto pl-4 flex-initial\"><div class=\"text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-pink-500\"><i class=\"fas fa-users\"></i></div></div></div><!-- &lt;p class=&quot;text-sm text-blueGray-400 mt-4&quot;&gt;\r\n                        &lt;span class=&quot;text-orange-500 mr-2&quot;&gt;\r\n                          &lt;i class=&quot;fas fa-arrow-down&quot;&gt;&lt;/i&gt; 1.10%\r\n                        &lt;/span&gt;\r\n                        &lt;span class=&quot;whitespace-nowrap&quot;&gt;\r\n                          Since yesterday\r\n                        &lt;/span&gt;\r\n                      &lt;/p&gt; --></div></div></div><div class=\"w-full lg:w-6/12 xl:w-3/12 px-4\"><div class=\"relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg\"><div class=\"flex-auto p-4\"><div class=\"flex flex-wrap\"><div class=\"relative w-full pr-4 max-w-full flex-grow flex-1\"><h5 class=\"text-blueGray-400 uppercase font-bold text-xs\"> Performance </h5><span class=\"font-semibold text-xl text-blueGray-700\"> 49,65% </span></div><div class=\"relative w-auto pl-4 flex-initial\"><div class=\"text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-lightBlue-500\"><i class=\"fas fa-percent\"></i></div></div></div><p class=\"text-sm text-blueGray-400 mt-4\"><span class=\"text-emerald-500 mr-2\"><i class=\"fas fa-arrow-up\"></i> 12% </span><span class=\"whitespace-nowrap\"> Since last month </span></p></div></div></div></div></div></div></div><div class=\"px-4 md:px-10 mx-auto w-full -m-24\"><div class=\"flex flex-wrap\"><div class=\"w-full xl:w-8/12 mb-12 xl:mb-0 px-4\"><div class=\"relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded bg-blueGray-800\"><div class=\"rounded-t mb-0 px-4 py-3 bg-transparent\"><div class=\"flex flex-wrap items-center\"><div class=\"relative w-full max-w-full flex-grow flex-1\"><h6 class=\"uppercase text-blueGray-100 mb-1 text-xs font-semibold\"> Overview </h6><h2 class=\"text-white text-xl font-semibold\"> Subscription </h2></div></div></div><div class=\"p-4 flex-auto\"><h3>Graph goes here. Details on subscription</h3><div class=\"relative\" style=\"height:350px;\"><canvas id=\"line-chart\"></canvas></div></div></div></div><div class=\"w-full xl:w-4/12 px-4\"><div class=\"relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded\"><div class=\"rounded-t mb-0 px-4 py-3 bg-transparent\"><div class=\"flex flex-wrap items-center\"><div class=\"relative w-full max-w-full flex-grow flex-1\"><h6 class=\"uppercase text-blueGray-400 mb-1 text-xs font-semibold\"> Routine </h6><h2 class=\"text-blueGray-700 text-xl font-semibold\"></h2></div></div></div><div class=\"p-4 flex-auto\"><!-- Chart --><div class=\"relative\" style=\"height:350px;\"><canvas id=\"bar-chart\"></canvas></div></div></div></div></div><!-- &lt;div class=&quot;flex flex-wrap mt-4&quot;&gt;\r\n            &lt;div class=&quot;w-full xl:w-8/12 mb-12 xl:mb-0 px-4&quot;&gt;\r\n              &lt;div class=&quot;relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded&quot;&gt;\r\n                &lt;div class=&quot;rounded-t mb-0 px-4 py-3 border-0&quot;&gt;\r\n                  &lt;div class=&quot;flex flex-wrap items-center&quot;&gt;\r\n                    &lt;div class=&quot;relative w-full px-4 max-w-full flex-grow flex-1&quot;&gt;\r\n                      &lt;h3 class=&quot;font-semibold text-base text-blueGray-700&quot;&gt;\r\n                        Page visits\r\n                      &lt;/h3&gt;\r\n                    &lt;/div&gt;\r\n                    &lt;div class=&quot;relative w-full px-4 max-w-full flex-grow flex-1 text-right&quot;&gt;\r\n                      &lt;button\r\n                        class=&quot;bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1&quot;\r\n                        type=&quot;button&quot;\r\n                        style=&quot;transition:all .15s ease&quot;\r\n                      &gt;\r\n                        See all\r\n                      &lt;/button&gt;\r\n                    &lt;/div&gt;\r\n                  &lt;/div&gt;\r\n                &lt;/div&gt;\r\n                &lt;div class=&quot;block w-full overflow-x-auto&quot;&gt;\r\n                   Projects table --><!-- &lt;table class=&quot;items-center w-full bg-transparent border-collapse&quot;&gt;\r\n                    &lt;thead&gt;\r\n                      &lt;tr&gt;\r\n                        &lt;th class=&quot;px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left&quot;&gt;\r\n                          Page name\r\n                        &lt;/th&gt;\r\n                        &lt;th class=&quot;px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left&quot;&gt;\r\n                          Visitors\r\n                        &lt;/th&gt;\r\n                        &lt;th class=&quot;px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left&quot;&gt;\r\n                          Unique users\r\n                        &lt;/th&gt;\r\n                        &lt;th class=&quot;px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left&quot;&gt;\r\n                          Bounce rate\r\n                        &lt;/th&gt;\r\n                      &lt;/tr&gt;\r\n                    &lt;/thead&gt;\r\n                    &lt;tbody&gt;\r\n                      &lt;tr&gt;\r\n                        &lt;th class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left&quot;&gt;\r\n                          /argon/\r\n                        &lt;/th&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          4,569\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          340\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          &lt;i class=&quot;fas fa-arrow-up text-emerald-500 mr-4&quot;&gt;&lt;/i&gt;\r\n                          46,53%\r\n                        &lt;/td&gt;\r\n                      &lt;/tr&gt;\r\n                      &lt;tr&gt;\r\n                        &lt;th class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left&quot;&gt;\r\n                          /argon/index.html\r\n                        &lt;/th&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          3,985\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          319\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          &lt;i class=&quot;fas fa-arrow-down text-orange-500 mr-4&quot;&gt;&lt;/i&gt;\r\n                          46,53%\r\n                        &lt;/td&gt;\r\n                      &lt;/tr&gt;\r\n                      &lt;tr&gt;\r\n                        &lt;th class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left&quot;&gt;\r\n                          /argon/charts.html\r\n                        &lt;/th&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          3,513\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          294\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          &lt;i class=&quot;fas fa-arrow-down text-orange-500 mr-4&quot;&gt;&lt;/i&gt;\r\n                          36,49%\r\n                        &lt;/td&gt;\r\n                      &lt;/tr&gt;\r\n                      &lt;tr&gt;\r\n                        &lt;th class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left&quot;&gt;\r\n                          /argon/tables.html\r\n                        &lt;/th&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          2,050\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          147\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          &lt;i class=&quot;fas fa-arrow-up text-emerald-500 mr-4&quot;&gt;&lt;/i&gt;\r\n                          50,87%\r\n                        &lt;/td&gt;\r\n                      &lt;/tr&gt;\r\n                      &lt;tr&gt;\r\n                        &lt;th class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left&quot;&gt;\r\n                          /argon/profile.html\r\n                        &lt;/th&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          1,795\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          190\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          &lt;i class=&quot;fas fa-arrow-down text-red-500 mr-4&quot;&gt;&lt;/i&gt;\r\n                          46,53%\r\n                        &lt;/td&gt;\r\n                      &lt;/tr&gt;\r\n                    &lt;/tbody&gt;\r\n                  &lt;/table&gt;\r\n                &lt;/div&gt;\r\n              &lt;/div&gt;\r\n            &lt;/div&gt;\r\n            &lt;div class=&quot;w-full xl:w-4/12 px-4&quot;&gt;\r\n              &lt;div class=&quot;relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-lg rounded&quot;&gt;\r\n                &lt;div class=&quot;rounded-t mb-0 px-4 py-3 border-0&quot;&gt;\r\n                  &lt;div class=&quot;flex flex-wrap items-center&quot;&gt;\r\n                    &lt;div class=&quot;relative w-full px-4 max-w-full flex-grow flex-1&quot;&gt;\r\n                      &lt;h3 class=&quot;font-semibold text-base text-blueGray-700&quot;&gt;\r\n                        Social traffic\r\n                      &lt;/h3&gt;\r\n                    &lt;/div&gt;\r\n                    &lt;div class=&quot;relative w-full px-4 max-w-full flex-grow flex-1 text-right&quot;&gt;\r\n                      &lt;button\r\n                        class=&quot;bg-indigo-500 text-white active:bg-indigo-600 text-xs font-bold uppercase px-3 py-1 rounded outline-none focus:outline-none mr-1 mb-1&quot;\r\n                        type=&quot;button&quot;\r\n                        style=&quot;transition:all .15s ease&quot;\r\n                      &gt;\r\n                        See all\r\n                      &lt;/button&gt;\r\n                    &lt;/div&gt;\r\n                  &lt;/div&gt;\r\n                &lt;/div&gt;\r\n                &lt;div class=&quot;block w-full overflow-x-auto&quot;&gt;\r\n                   Projects table --><!-- &lt;table class=&quot;items-center w-full bg-transparent border-collapse&quot;&gt;\r\n                    &lt;thead class=&quot;thead-light&quot;&gt;\r\n                      &lt;tr&gt;\r\n                        &lt;th class=&quot;px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left&quot;&gt;\r\n                          Referral\r\n                        &lt;/th&gt;\r\n                        &lt;th class=&quot;px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left&quot;&gt;\r\n                          Visitors\r\n                        &lt;/th&gt;\r\n                        &lt;th\r\n                          class=&quot;px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left&quot;\r\n                          style=&quot;min-width:140px&quot;\r\n                        &gt;&lt;/th&gt;\r\n                      &lt;/tr&gt;\r\n                    &lt;/thead&gt;\r\n                    &lt;tbody&gt;\r\n                      &lt;tr&gt;\r\n                        &lt;th class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left&quot;&gt;\r\n                          Facebook\r\n                        &lt;/th&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          1,480\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          &lt;div class=&quot;flex items-center&quot;&gt;\r\n                            &lt;span class=&quot;mr-2&quot;&gt;60%&lt;/span&gt;\r\n                            &lt;div class=&quot;relative w-full&quot;&gt;\r\n                              &lt;div class=&quot;overflow-hidden h-2 text-xs flex rounded bg-red-200&quot;&gt;\r\n                                &lt;div\r\n                                  style=&quot;width:60%&quot;\r\n                                  class=&quot;shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-red-500&quot;\r\n                                &gt;&lt;/div&gt;\r\n                              &lt;/div&gt;\r\n                            &lt;/div&gt;\r\n                          &lt;/div&gt;\r\n                        &lt;/td&gt;\r\n                      &lt;/tr&gt;\r\n                      &lt;tr&gt;\r\n                        &lt;th class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left&quot;&gt;\r\n                          Facebook\r\n                        &lt;/th&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          5,480\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          &lt;div class=&quot;flex items-center&quot;&gt;\r\n                            &lt;span class=&quot;mr-2&quot;&gt;70%&lt;/span&gt;\r\n                            &lt;div class=&quot;relative w-full&quot;&gt;\r\n                              &lt;div class=&quot;overflow-hidden h-2 text-xs flex rounded bg-emerald-200&quot;&gt;\r\n                                &lt;div\r\n                                  style=&quot;width:70%&quot;\r\n                                  class=&quot;shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500&quot;\r\n                                &gt;&lt;/div&gt;\r\n                              &lt;/div&gt;\r\n                            &lt;/div&gt;\r\n                          &lt;/div&gt;\r\n                        &lt;/td&gt;\r\n                      &lt;/tr&gt;\r\n                      &lt;tr&gt;\r\n                        &lt;th class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left&quot;&gt;\r\n                          Google\r\n                        &lt;/th&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          4,807\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          &lt;div class=&quot;flex items-center&quot;&gt;\r\n                            &lt;span class=&quot;mr-2&quot;&gt;80%&lt;/span&gt;\r\n                            &lt;div class=&quot;relative w-full&quot;&gt;\r\n                              &lt;div class=&quot;overflow-hidden h-2 text-xs flex rounded bg-purple-200&quot;&gt;\r\n                                &lt;div\r\n                                  style=&quot;width:80%&quot;\r\n                                  class=&quot;shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-purple-500&quot;\r\n                                &gt;&lt;/div&gt;\r\n                              &lt;/div&gt;\r\n                            &lt;/div&gt;\r\n                          &lt;/div&gt;\r\n                        &lt;/td&gt;\r\n                      &lt;/tr&gt;\r\n                      &lt;tr&gt;\r\n                        &lt;th class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left&quot;&gt;\r\n                          Instagram\r\n                        &lt;/th&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          3,678\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          &lt;div class=&quot;flex items-center&quot;&gt;\r\n                            &lt;span class=&quot;mr-2&quot;&gt;75%&lt;/span&gt;\r\n                            &lt;div class=&quot;relative w-full&quot;&gt;\r\n                              &lt;div class=&quot;overflow-hidden h-2 text-xs flex rounded bg-lightBlue-200&quot;&gt;\r\n                                &lt;div\r\n                                  style=&quot;width:75%&quot;\r\n                                  class=&quot;shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-lightBlue-500&quot;\r\n                                &gt;&lt;/div&gt;\r\n                              &lt;/div&gt;\r\n                            &lt;/div&gt;\r\n                          &lt;/div&gt;\r\n                        &lt;/td&gt;\r\n                      &lt;/tr&gt;\r\n                      &lt;tr&gt;\r\n                        &lt;th class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left&quot;&gt;\r\n                          twitter\r\n                        &lt;/th&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          2,645\r\n                        &lt;/td&gt;\r\n                        &lt;td class=&quot;border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4&quot;&gt;\r\n                          &lt;div class=&quot;flex items-center&quot;&gt;\r\n                            &lt;span class=&quot;mr-2&quot;&gt;30%&lt;/span&gt;\r\n                            &lt;div class=&quot;relative w-full&quot;&gt;\r\n                              &lt;div class=&quot;overflow-hidden h-2 text-xs flex rounded bg-orange-200&quot;&gt;\r\n                                &lt;div\r\n                                  style=&quot;width:30%&quot;\r\n                                  class=&quot;shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-emerald-500&quot;\r\n                                &gt;&lt;/div&gt;\r\n                              &lt;/div&gt;\r\n                            &lt;/div&gt;\r\n                          &lt;/div&gt;\r\n                        &lt;/td&gt;\r\n                      &lt;/tr&gt;\r\n                    &lt;/tbody&gt;\r\n                  &lt;/table&gt; --></div>", 2);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Nav"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", _hoisted_2, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_3, [_hoisted_4, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_6, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", _hoisted_7, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.user.firstname), 1
   /* TEXT */
-  )])]), _hoisted_10])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Header "), _hoisted_11]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Dashboard " + (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($props.user.firstname), 1
-  /* TEXT */
-  )], 64
+  )])]), _hoisted_10])])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Header "), _hoisted_11]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" </div>  ")], 64
   /* STABLE_FRAGMENT */
   );
 }
@@ -19962,19 +20109,28 @@ __webpack_require__.r(__webpack_exports__);
 var _hoisted_1 = {
   "class": "md:left-0 md:block md:fixed md:top-0 md:bottom-0 md:overflow-y-auto md:flex-row md:flex-nowrap md:overflow-hidden shadow-xl bg-white flex flex-wrap items-center justify-between relative md:w-64 z-10 py-4 px-6"
 };
-
-var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+var _hoisted_2 = {
   "class": "md:flex-col md:items-stretch md:min-h-full md:flex-nowrap px-0 flex flex-wrap items-center justify-between w-full mx-auto"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+};
+
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
   "class": "cursor-pointer text-black opacity-50 md:hidden px-3 py-1 text-xl leading-none bg-transparent rounded border border-solid border-transparent",
   type: "button",
   onclick: "toggleNavbar('example-collapse-sidebar')"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fas fa-bars"
-})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+})], -1
+/* HOISTED */
+);
+
+var _hoisted_4 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   "class": "md:block text-left md:pb-2 text-blueGray-600 mr-0 inline-block whitespace-nowrap text-sm uppercase font-bold p-4 px-0",
   href: "javascript:void(0)"
-}, " Tailwind Starter Kit "), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
+}, " Tailwind Starter Kit ", -1
+/* HOISTED */
+);
+
+var _hoisted_5 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
   "class": "md:hidden items-center flex flex-wrap list-none"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
   "class": "inline-block relative"
@@ -20038,10 +20194,16 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
 }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   href: "#pablo",
   "class": "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
-}, "Seprated link")])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+}, "Seprated link")])])], -1
+/* HOISTED */
+);
+
+var _hoisted_6 = {
   "class": "md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded hidden",
   id: "example-collapse-sidebar"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+};
+
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "md:min-w-full md:hidden block pb-4 mb-4 border-b border-solid border-blueGray-200"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "flex flex-wrap"
@@ -20058,7 +20220,11 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   onclick: "toggleNavbar('example-collapse-sidebar')"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fas fa-times"
-})])])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+})])])])], -1
+/* HOISTED */
+);
+
+var _hoisted_8 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
   "class": "mt-6 mb-4 md:hidden"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
   "class": "mb-3 pt-0"
@@ -20066,89 +20232,188 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementV
   type: "text",
   placeholder: "Search",
   "class": "border-0 px-3 py-2 h-12 border border-solid border-blueGray-500 placeholder-blueGray-300 text-blueGray-600 bg-white rounded text-base leading-snug shadow-none outline-none focus:outline-none w-full font-normal"
-})])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
+})])], -1
+/* HOISTED */
+);
+
+var _hoisted_9 = {
   "class": "md:flex-col md:min-w-full flex flex-col list-none"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+};
+
+var _hoisted_10 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
   "class": "items-center"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   "class": "text-pink-500 hover:text-pink-600 text-xs uppercase py-3 font-bold block",
   href: "#/dashboard"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fas fa-tv opacity-75 mr-2 text-sm"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Dashboard")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "items-center"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block",
-  href: "#/landing"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Dashboard")])], -1
+/* HOISTED */
+);
+
+var _hoisted_11 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fas fa-newspaper text-blueGray-400 mr-2 text-sm"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Subscription")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "items-center"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block",
-  href: "#/profile"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_12 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Subscription ");
+
+var _hoisted_13 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fas fa-user-circle text-blueGray-400 mr-2 text-sm"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Profile Page")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
+}, null, -1
+/* HOISTED */
+);
+
+var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Profile Page ");
+
+var _hoisted_15 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
   "class": "items-center"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
   "class": "text-blueGray-300 text-xs uppercase py-3 font-bold block",
   href: "#pablo"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
   "class": "fas fa-tools text-blueGray-300 mr-2 text-sm"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Settings (soon)")])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("hr", {
-  "class": "my-4 md:min-w-full"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
-  "class": "md:flex-col md:min-w-full flex flex-col list-none md:mb-4"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "inline-flex"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold",
-  href: "#/documentation/styles"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fas fa-paint-brush mr-2 text-blueGray-400 text-base"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Styles")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "inline-flex"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold",
-  href: "#/documentation/alerts"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fab fa-css3-alt mr-2 text-blueGray-400 text-base"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" CSS Components")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "inline-flex"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold",
-  href: "#/documentation/vue/alerts"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fab fa-vuejs mr-2 text-blueGray-400 text-base"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" VueJS")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "inline-flex"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold",
-  href: "#/documentation/react/alerts"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fab fa-react mr-2 text-blueGray-400 text-base"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" React")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "inline-flex"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold",
-  href: "#/documentation/angular/alerts"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fab fa-angular mr-2 text-blueGray-400 text-base"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Angular")])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("li", {
-  "class": "inline-flex"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
-  "class": "text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold",
-  href: "#/documentation/javascript/alerts"
-}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
-  "class": "fab fa-js-square mr-2 text-blueGray-400 text-base"
-}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Javascript")])])])])], -1
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNode)(" Settings (soon)")])], -1
 /* HOISTED */
 );
 
-var _hoisted_3 = [_hoisted_2];
-function render(_ctx, _cache) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("nav", _hoisted_1, _hoisted_3);
+var _hoisted_16 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<hr class=\"my-4 md:min-w-full\"><ul class=\"md:flex-col md:min-w-full flex flex-col list-none md:mb-4\"><li class=\"inline-flex\"><a class=\"text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold\" href=\"#/documentation/styles\"><i class=\"fas fa-paint-brush mr-2 text-blueGray-400 text-base\"></i> Styles</a></li><li class=\"inline-flex\"><a class=\"text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold\" href=\"#/documentation/alerts\"><i class=\"fab fa-css3-alt mr-2 text-blueGray-400 text-base\"></i> CSS Components</a></li><li class=\"inline-flex\"><a class=\"text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold\" href=\"#/documentation/vue/alerts\"><i class=\"fab fa-vuejs mr-2 text-blueGray-400 text-base\"></i> VueJS</a></li><li class=\"inline-flex\"><a class=\"text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold\" href=\"#/documentation/react/alerts\"><i class=\"fab fa-react mr-2 text-blueGray-400 text-base\"></i> React</a></li><li class=\"inline-flex\"><a class=\"text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold\" href=\"#/documentation/angular/alerts\"><i class=\"fab fa-angular mr-2 text-blueGray-400 text-base\"></i> Angular</a></li><li class=\"inline-flex\"><a class=\"text-blueGray-700 hover:text-blueGray-500 text-sm block mb-4 no-underline font-semibold\" href=\"#/documentation/javascript/alerts\"><i class=\"fab fa-js-square mr-2 text-blueGray-400 text-base\"></i> Javascript</a></li></ul>", 2);
+
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  var _component_NavLink = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("NavLink");
+
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("nav", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_2, [_hoisted_3, _hoisted_4, _hoisted_5, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_6, [_hoisted_7, _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", _hoisted_9, [_hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_NavLink, {
+    href: "/subscription",
+    "class": "text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_11, _hoisted_12];
+    }),
+    _: 1
+    /* STABLE */
+
+  }), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_NavLink, {
+    href: "/subscription",
+    "class": "text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
+  }, {
+    "default": (0,vue__WEBPACK_IMPORTED_MODULE_0__.withCtx)(function () {
+      return [_hoisted_13, _hoisted_14];
+    }),
+    _: 1
+    /* STABLE */
+
+  }), _hoisted_15]), _hoisted_16])])]);
+}
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Subscription.vue?vue&type=template&id=4e2b247e":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Subscription.vue?vue&type=template&id=4e2b247e ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
+
+var _hoisted_1 = {
+  "class": "relative md:ml-64 bg-blueGray-50"
+};
+
+var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("nav", {
+  "class": "absolute top-0 left-0 w-full z-10 bg-transparent md:flex-row md:flex-nowrap md:justify-start flex items-center p-4"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "w-full mx-autp items-center flex justify-between md:flex-nowrap flex-wrap md:px-10 px-4"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  "class": "text-white text-sm uppercase hidden lg:inline-block font-semibold",
+  href: "./index.html"
+}, "Dashboard"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("form", {
+  "class": "md:flex hidden flex-row flex-wrap items-center lg:ml-auto mr-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "relative flex w-full flex-wrap items-stretch"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "z-10 h-full leading-snug font-normal absolute text-center text-blueGray-300 absolute bg-transparent rounded text-base items-center justify-center w-8 pl-3 py-3"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("i", {
+  "class": "fas fa-search"
+})]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
+  type: "text",
+  placeholder: "Search here...",
+  "class": "border-0 px-3 py-3 placeholder-blueGray-300 text-blueGray-600 relative bg-white bg-white rounded text-sm shadow outline-none focus:outline-none focus:ring w-full pl-10"
+})])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("ul", {
+  "class": "flex-col md:flex-row list-none items-center hidden md:flex"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  "class": "text-blueGray-500 block",
+  href: "#pablo",
+  onclick: "openDropdown(event,'user-dropdown')"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "items-center flex"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("span", {
+  "class": "w-12 h-12 ml-6 text-sm text-white bg-blueGray-200 inline-flex items-center justify-center rounded-full"
+})])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "hidden bg-white text-base z-50 float-left py-2 list-none text-left rounded shadow-lg mt-1",
+  style: {
+    "min-width": "12rem"
+  },
+  id: "user-dropdown"
+}, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "#pablo",
+  "class": "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+}, "Action"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "#pablo",
+  "class": "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+}, "Another action"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "#pablo",
+  "class": "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+}, "Something else here"), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", {
+  "class": "h-0 my-2 border border-solid border-blueGray-100"
+}), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+  href: "#pablo",
+  "class": "text-sm py-2 px-4 font-normal block w-full whitespace-nowrap bg-transparent text-blueGray-700"
+}, "Seprated link")])])])], -1
+/* HOISTED */
+);
+
+var _hoisted_3 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"relative bg-pink-600 md:pt-32 pb-32 pt-12\"><div class=\"px-4 md:px-10 mx-auto w-full\"><div><!-- Card stats --><div class=\"flex flex-wrap\"><div class=\"w-full lg:w-6/12 xl:w-3/12 px-4\"><div class=\"relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg\"><div class=\"flex-auto p-4\"><div class=\"flex flex-wrap\"><div class=\"relative w-full pr-4 max-w-full flex-grow flex-1\"><h5 class=\"text-blueGray-400 uppercase font-bold text-xs\"> Date </h5><p class=\"font-semibold text-xl text-blueGray-700 demo\" id=\"demo\"></p></div><div class=\"relative w-auto pl-4 flex-initial\"><div class=\"text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-red-500\"><i class=\"far fa-chart-bar\"></i></div></div></div><!-- &lt;p class=&quot;text-sm text-blueGray-400 mt-4&quot;&gt;\r\n                        &lt;span class=&quot;text-emerald-500 mr-2&quot;&gt;\r\n                          &lt;i class=&quot;fas fa-arrow-up&quot;&gt;&lt;/i&gt; 3.48%\r\n                        &lt;/span&gt;\r\n                        &lt;span class=&quot;whitespace-nowrap&quot;&gt;\r\n                          Since last month\r\n                        &lt;/span&gt;\r\n                      &lt;/p&gt; --></div></div></div><div class=\"w-full lg:w-6/12 xl:w-3/12 px-4\"><div class=\"relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg\"><div class=\"flex-auto p-4\"><div class=\"flex flex-wrap\"><div class=\"relative w-full pr-4 max-w-full flex-grow flex-1\"><h5 class=\"text-blueGray-400 uppercase font-bold text-xs\"> Instructor </h5><span class=\"font-semibold text-sm text-blueGray-700\"> James Milner </span></div><div class=\"relative w-auto pl-4 flex-initial\"><div class=\"text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-orange-500\"><i class=\"fas fa-chart-pie\"></i></div></div></div><!-- &lt;p class=&quot;text-sm text-blueGray-400 mt-4&quot;&gt;\r\n                        &lt;span class=&quot;text-red-500 mr-2&quot;&gt;\r\n                          &lt;i class=&quot;fas fa-arrow-down&quot;&gt;&lt;/i&gt; 3.48%\r\n                        &lt;/span&gt;\r\n                        &lt;span class=&quot;whitespace-nowrap&quot;&gt;\r\n                          Since last week\r\n                        &lt;/span&gt;\r\n                      &lt;/p&gt; --></div></div></div><div class=\"w-full lg:w-6/12 xl:w-3/12 px-4\"><div class=\"relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg\"><div class=\"flex-auto p-4\"><div class=\"flex flex-wrap\"><div class=\"relative w-full pr-4 max-w-full flex-grow flex-1\"><h5 class=\"text-blueGray-400 uppercase font-bold text-xs\"> Hours Spent </h5><span class=\"font-semibold text-xl text-blueGray-700\"> 140 </span></div><div class=\"relative w-auto pl-4 flex-initial\"><div class=\"text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-pink-500\"><i class=\"fas fa-users\"></i></div></div></div><!-- &lt;p class=&quot;text-sm text-blueGray-400 mt-4&quot;&gt;\r\n                        &lt;span class=&quot;text-orange-500 mr-2&quot;&gt;\r\n                          &lt;i class=&quot;fas fa-arrow-down&quot;&gt;&lt;/i&gt; 1.10%\r\n                        &lt;/span&gt;\r\n                        &lt;span class=&quot;whitespace-nowrap&quot;&gt;\r\n                          Since yesterday\r\n                        &lt;/span&gt;\r\n                      &lt;/p&gt; --></div></div></div><div class=\"w-full lg:w-6/12 xl:w-3/12 px-4\"><div class=\"relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg\"><div class=\"flex-auto p-4\"><div class=\"flex flex-wrap\"><div class=\"relative w-full pr-4 max-w-full flex-grow flex-1\"><h5 class=\"text-blueGray-400 uppercase font-bold text-xs\"> Performance </h5><span class=\"font-semibold text-xl text-blueGray-700\"> 49,65% </span></div><div class=\"relative w-auto pl-4 flex-initial\"><div class=\"text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full bg-lightBlue-500\"><i class=\"fas fa-percent\"></i></div></div></div><p class=\"text-sm text-blueGray-400 mt-4\"><span class=\"text-emerald-500 mr-2\"><i class=\"fas fa-arrow-up\"></i> 12% </span><span class=\"whitespace-nowrap\"> Since last month </span></p></div></div></div></div></div></div></div><div class=\"text-center mt-6\"><p>Subscribe to get access to all gym facilities</p></div>", 2);
+
+var _hoisted_5 = {
+  "class": "p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5"
+};
+
+var _hoisted_6 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"rounded overflow-hidden shadow-lg bg-pink-600\"><!-- &lt;img class=&quot;w-full&quot; src=&quot;/mountain.jpg&quot; alt=&quot;Mountain&quot;&gt; --><div class=\"px-6 py-4\"><div class=\"font-bold text-xl mb-3 text-center\">Mountain</div><div class=\"font-bold text-xl mb-3 text-center\">1 Month</div><p class=\"text-gray-900 text-base text-xl text-center font-bold\"><span class=\"font-bold\">₦</span> 5000 </p></div><div class=\"px-6 pt-4 pb-2 text-center\"><a href=\"#\"><button class=\"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded\"> Subscribe </button></a></div></div>", 1);
+
+var _hoisted_7 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"rounded overflow-hidden shadow-lg bg-pink-600\"><div class=\"px-6 py-4\"><div class=\"font-bold text-xl mb-2 text-center\">River</div><div class=\"font-bold text-xl mb-3 text-center\">2 Months</div><p class=\"text-gray-900 text-base text-xl text-center font-bold\"><span class=\"font-bold\">₦</span> 7000 </p></div><div class=\"px-6 pt-4 pb-2 text-center\"><a href=\"#\"><button class=\"bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded\"> Subscribe </button></a></div></div>", 1);
+
+var _hoisted_8 = {
+  "class": "rounded overflow-hidden shadow-lg bg-pink-600"
+};
+
+var _hoisted_9 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createStaticVNode)("<div class=\"px-6 py-4\"><div class=\"font-bold text-xl mb-2 text-center\">Forest</div><div class=\"font-bold text-xl mb-3 text-center\">3 Months</div><p class=\"text-gray-900 text-base text-xl text-center font-bold\"><span class=\"font-bold\">₦</span> <span id=\"price\">12000</span></p></div>", 1);
+
+var _hoisted_10 = {
+  "class": "px-6 pt-4 pb-2 text-center"
+};
+function render(_ctx, _cache, $props, $setup, $data, $options) {
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)($setup["Nav"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" Header "), _hoisted_3, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Card 1"), _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Card 2"), _hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("Card 3"), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_8, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <img class=\"w-full\" src=\"/forest.jpg\" alt=\"Forest\"> "), _hoisted_9, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_10, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("a", {
+    href: "#",
+    onClick: _cache[1] || (_cache[1] = function () {
+      return _ctx.payWithPaystack && _ctx.payWithPaystack.apply(_ctx, arguments);
+    })
+  }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
+    "class": "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded",
+    id: "payment",
+    onSubmit: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
+      return _ctx.submit && _ctx.submit.apply(_ctx, arguments);
+    }, ["prevent"]))
+  }, " Subscribe ", 32
+  /* HYDRATE_EVENTS */
+  )])])])])])], 64
+  /* STABLE_FRAGMENT */
+  );
 }
 
 /***/ }),
@@ -27681,6 +27946,32 @@ if (false) {}
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Dashboard/Footer.vue":
+/*!*************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Footer.vue ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Footer_vue_vue_type_template_id_08c69782__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Footer.vue?vue&type=template&id=08c69782 */ "./resources/js/Pages/Dashboard/Footer.vue?vue&type=template&id=08c69782");
+/* harmony import */ var C_xamppo_htdocs_gym_membership_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+const script = {}
+
+;
+const __exports__ = /*#__PURE__*/(0,C_xamppo_htdocs_gym_membership_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_Footer_vue_vue_type_template_id_08c69782__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/Dashboard/Footer.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Dashboard/Home.vue":
 /*!***********************************************!*\
   !*** ./resources/js/Pages/Dashboard/Home.vue ***!
@@ -27721,12 +28012,63 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _Nav_vue_vue_type_template_id_926067a2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Nav.vue?vue&type=template&id=926067a2 */ "./resources/js/Pages/Dashboard/Nav.vue?vue&type=template&id=926067a2");
-/* harmony import */ var C_xamppo_htdocs_gym_membership_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var _Nav_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Nav.vue?vue&type=script&lang=js */ "./resources/js/Pages/Dashboard/Nav.vue?vue&type=script&lang=js");
+/* harmony import */ var C_xamppo_htdocs_gym_membership_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,C_xamppo_htdocs_gym_membership_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Nav_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Nav_vue_vue_type_template_id_926067a2__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/Dashboard/Nav.vue"]])
+/* hot reload */
+if (false) {}
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Profile.vue":
+/*!**************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Profile.vue ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var C_xamppo_htdocs_gym_membership_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 const script = {}
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_xamppo_htdocs_gym_membership_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_1__["default"])(script, [['render',_Nav_vue_vue_type_template_id_926067a2__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/Dashboard/Nav.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_xamppo_htdocs_gym_membership_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_0__["default"])(script, [['__file',"resources/js/Pages/Dashboard/Profile.vue"]])
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (__exports__);
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Subscription.vue":
+/*!*******************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Subscription.vue ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _Subscription_vue_vue_type_template_id_4e2b247e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Subscription.vue?vue&type=template&id=4e2b247e */ "./resources/js/Pages/Dashboard/Subscription.vue?vue&type=template&id=4e2b247e");
+/* harmony import */ var _Subscription_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Subscription.vue?vue&type=script&setup=true&lang=js */ "./resources/js/Pages/Dashboard/Subscription.vue?vue&type=script&setup=true&lang=js");
+/* harmony import */ var C_xamppo_htdocs_gym_membership_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+
+
+
+
+;
+const __exports__ = /*#__PURE__*/(0,C_xamppo_htdocs_gym_membership_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_Subscription_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Subscription_vue_vue_type_template_id_4e2b247e__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/Pages/Dashboard/Subscription.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -27952,6 +28294,38 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Dashboard/Nav.vue?vue&type=script&lang=js":
+/*!**********************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Nav.vue?vue&type=script&lang=js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Nav_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Nav_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Nav.vue?vue&type=script&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Nav.vue?vue&type=script&lang=js");
+ 
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Subscription.vue?vue&type=script&setup=true&lang=js":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Subscription.vue?vue&type=script&setup=true&lang=js ***!
+  \******************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Subscription_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__["default"])
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Subscription_vue_vue_type_script_setup_true_lang_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Subscription.vue?vue&type=script&setup=true&lang=js */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Subscription.vue?vue&type=script&setup=true&lang=js");
+ 
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Login.vue?vue&type=script&lang=js":
 /*!**************************************************************!*\
   !*** ./resources/js/Pages/Login.vue?vue&type=script&lang=js ***!
@@ -28064,6 +28438,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/Pages/Dashboard/Footer.vue?vue&type=template&id=08c69782":
+/*!*******************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Footer.vue?vue&type=template&id=08c69782 ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Footer_vue_vue_type_template_id_08c69782__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Footer_vue_vue_type_template_id_08c69782__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Footer.vue?vue&type=template&id=08c69782 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Footer.vue?vue&type=template&id=08c69782");
+
+
+/***/ }),
+
 /***/ "./resources/js/Pages/Dashboard/Home.vue?vue&type=template&id=e7f6b6fa":
 /*!*****************************************************************************!*\
   !*** ./resources/js/Pages/Dashboard/Home.vue?vue&type=template&id=e7f6b6fa ***!
@@ -28092,6 +28482,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Nav_vue_vue_type_template_id_926067a2__WEBPACK_IMPORTED_MODULE_0__.render)
 /* harmony export */ });
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Nav_vue_vue_type_template_id_926067a2__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Nav.vue?vue&type=template&id=926067a2 */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Nav.vue?vue&type=template&id=926067a2");
+
+
+/***/ }),
+
+/***/ "./resources/js/Pages/Dashboard/Subscription.vue?vue&type=template&id=4e2b247e":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/Pages/Dashboard/Subscription.vue?vue&type=template&id=4e2b247e ***!
+  \*************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "render": () => (/* reexport safe */ _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Subscription_vue_vue_type_template_id_4e2b247e__WEBPACK_IMPORTED_MODULE_0__.render)
+/* harmony export */ });
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_clonedRuleSet_5_use_0_node_modules_vue_loader_dist_templateLoader_js_ruleSet_1_rules_2_node_modules_vue_loader_dist_index_js_ruleSet_0_use_0_Subscription_vue_vue_type_template_id_4e2b247e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!../../../../node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!../../../../node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./Subscription.vue?vue&type=template&id=4e2b247e */ "./node_modules/babel-loader/lib/index.js??clonedRuleSet-5.use[0]!./node_modules/vue-loader/dist/templateLoader.js??ruleSet[1].rules[2]!./node_modules/vue-loader/dist/index.js??ruleSet[0].use[0]!./resources/js/Pages/Dashboard/Subscription.vue?vue&type=template&id=4e2b247e");
 
 
 /***/ }),
@@ -28446,10 +28852,16 @@ var map = {
 	"./Auth/Login.vue": "./resources/js/Pages/Auth/Login.vue",
 	"./Auth/Register": "./resources/js/Pages/Auth/Register.vue",
 	"./Auth/Register.vue": "./resources/js/Pages/Auth/Register.vue",
+	"./Dashboard/Footer": "./resources/js/Pages/Dashboard/Footer.vue",
+	"./Dashboard/Footer.vue": "./resources/js/Pages/Dashboard/Footer.vue",
 	"./Dashboard/Home": "./resources/js/Pages/Dashboard/Home.vue",
 	"./Dashboard/Home.vue": "./resources/js/Pages/Dashboard/Home.vue",
 	"./Dashboard/Nav": "./resources/js/Pages/Dashboard/Nav.vue",
 	"./Dashboard/Nav.vue": "./resources/js/Pages/Dashboard/Nav.vue",
+	"./Dashboard/Profile": "./resources/js/Pages/Dashboard/Profile.vue",
+	"./Dashboard/Profile.vue": "./resources/js/Pages/Dashboard/Profile.vue",
+	"./Dashboard/Subscription": "./resources/js/Pages/Dashboard/Subscription.vue",
+	"./Dashboard/Subscription.vue": "./resources/js/Pages/Dashboard/Subscription.vue",
 	"./Login": "./resources/js/Pages/Login.vue",
 	"./Login.vue": "./resources/js/Pages/Login.vue",
 	"./Users": "./resources/js/Pages/Users.vue",

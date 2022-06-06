@@ -138,22 +138,17 @@
                   Dashboard</a
                 >
               </li>
-              <li class="items-center">
-                <a
+              <NavLink href="/subscription"
                   class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
-                  href="#/landing"
+                
                   ><i class="fas fa-newspaper text-blueGray-400 mr-2 text-sm"></i>
-                  Subscription</a
-                >
-              </li>
-              <li class="items-center">
-                <a
+                  Subscription
+              </NavLink>
+              <NavLink href="/subscription"
                   class="text-blueGray-700 hover:text-blueGray-500 text-xs uppercase py-3 font-bold block"
-                  href="#/profile"
                   ><i class="fas fa-user-circle text-blueGray-400 mr-2 text-sm"></i>
-                  Profile Page</a
-                >
-              </li>
+                  Profile Page
+              </NavLink>
               <li class="items-center">
                 <a
                   class="text-blueGray-300 text-xs uppercase py-3 font-bold block"
@@ -223,3 +218,12 @@
         </div>
       </nav>
 </template>
+
+<script>
+import NavLink from '../../Shared/NavLink';
+
+export default{
+  components : {NavLink}
+}
+
+</script>

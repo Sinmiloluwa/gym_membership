@@ -84,4 +84,9 @@ class DashboardController extends Controller
     {
         //
     }
+
+    public function subscribe()
+    {
+        return Inertia::render('Dashboard/Subscription');
+    }
 }

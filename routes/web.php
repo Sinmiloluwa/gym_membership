@@ -25,6 +25,7 @@ Route::controller(AuthController::class)->group( function () {
 });
 
 Route::resource('dashboard', DashboardController::class);
+Route::get('/subscription', [DashboardController::class, 'subscribe']);
 
 
 Route::get('/', function () {
