@@ -19501,15 +19501,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.esm-bundler.js");
-/* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Nav */ "./resources/js/Pages/Dashboard/Nav.vue");
-/* harmony import */ var _Shared_NavLink__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../Shared/NavLink */ "./resources/js/Shared/NavLink.vue");
+/* harmony import */ var _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @inertiajs/inertia */ "./node_modules/@inertiajs/inertia/dist/index.js");
+/* harmony import */ var _Nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Nav */ "./resources/js/Pages/Dashboard/Nav.vue");
+/* harmony import */ var _Shared_NavLink__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../Shared/NavLink */ "./resources/js/Shared/NavLink.vue");
+
+
 
 
 
 var __default__ = {
   components: {
-    Nav: _Nav__WEBPACK_IMPORTED_MODULE_1__["default"],
-    NavLink: _Shared_NavLink__WEBPACK_IMPORTED_MODULE_2__["default"]
+    Nav: _Nav__WEBPACK_IMPORTED_MODULE_2__["default"],
+    NavLink: _Shared_NavLink__WEBPACK_IMPORTED_MODULE_3__["default"]
   }
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/*#__PURE__*/Object.assign(__default__, {
@@ -19544,27 +19547,27 @@ var __default__ = {
           },
           callback: function callback(response) {
             var message = 'Payment complete! Reference: ' + response.reference;
-            alert(message);
+            var form = (0,vue__WEBPACK_IMPORTED_MODULE_0__.reactive)({
+              email: 'emmasimons141@gmail.com',
+              amount: document.getElementById("price").innerText * 100,
+              reference: response.reference
+            });
+
+            var submit = function submit() {
+              _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia.post('/pay', form);
+            };
           }
         });
         handler.openIframe();
         console.log(document.getElementById("price").innerText.split("₦"));
       }
-
-      var form = reactive({
-        email: 'emmasimons141@gmail.com',
-        amount: document.getElementById("price").innerText * 100,
-        reference: response.reference
-      });
-
-      var submit = function submit() {
-        Inertia.post('/pay', form);
-      };
     });
     var __returned__ = {
-      Nav: _Nav__WEBPACK_IMPORTED_MODULE_1__["default"],
-      NavLink: _Shared_NavLink__WEBPACK_IMPORTED_MODULE_2__["default"],
-      onMounted: vue__WEBPACK_IMPORTED_MODULE_0__.onMounted
+      Nav: _Nav__WEBPACK_IMPORTED_MODULE_2__["default"],
+      NavLink: _Shared_NavLink__WEBPACK_IMPORTED_MODULE_3__["default"],
+      onMounted: vue__WEBPACK_IMPORTED_MODULE_0__.onMounted,
+      reactive: vue__WEBPACK_IMPORTED_MODULE_0__.reactive,
+      Inertia: _inertiajs_inertia__WEBPACK_IMPORTED_MODULE_1__.Inertia
     };
     Object.defineProperty(__returned__, '__isScriptSetup', {
       enumerable: false,
@@ -20405,6 +20408,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     })
   }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("button", {
     "class": "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded",
+    type: "submit",
     id: "payment",
     onSubmit: _cache[0] || (_cache[0] = (0,vue__WEBPACK_IMPORTED_MODULE_0__.withModifiers)(function () {
       return _ctx.submit && _ctx.submit.apply(_ctx, arguments);

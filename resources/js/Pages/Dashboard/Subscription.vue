@@ -238,7 +238,7 @@
         </p>
       </div>
       <div class="px-6 pt-4 pb-2 text-center">
-           <a href="#" v-on:click="payWithPaystack"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id="payment" @submit.prevent="submit">
+           <a href="#" v-on:click="payWithPaystack"><button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit" id="payment" @submit.prevent="submit">
   Subscribe
 </button></a>
         </div>
@@ -258,6 +258,8 @@ export default {
 
 <script setup>
 import { onMounted } from 'vue';
+import {reactive} from 'vue';
+import {Inertia} from '@inertiajs/inertia';
 defineProps({
     user : String
 });
@@ -286,21 +288,21 @@ function payWithPaystack(e) {
     },
     callback: function(response){
       let message = 'Payment complete! Reference: ' + response.reference;
-      alert(message);
-    }
-  });
-  handler.openIframe();
-  console.log(document.getElementById("price").innerText.split("₦"));
-}
-let form = reactive({
-     email : 'emmasimons141@gmail.com',
-     amount : document.getElementById("price").innerText * 100,
-     reference : response.reference
+      let form = reactive({
+      email : 'emmasimons141@gmail.com',
+      amount : document.getElementById("price").innerText * 100,
+      reference : response.reference
    });
 
 let submit = () => {
   Inertia.post('/pay', form);
 }
+    }
+  });
+  handler.openIframe();
+  console.log(document.getElementById("price").innerText.split("₦"));
+}
+
 })
 </script>
 

@@ -26,7 +26,7 @@ Route::controller(AuthController::class)->group( function () {
 
 Route::resource('dashboard', DashboardController::class);
 Route::get('/subscription', [DashboardController::class, 'subscribe']);
-
+Route::post('/pay', [DashboardController::class, 'pay']);
 
 Route::get('/', function () {
     return Inertia::render('Welcome');

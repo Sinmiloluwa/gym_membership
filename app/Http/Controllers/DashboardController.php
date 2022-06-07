@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Inertia\Inertia;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class DashboardController extends Controller
 {
@@ -88,5 +90,25 @@ class DashboardController extends Controller
     public function subscribe()
     {
         return Inertia::render('Dashboard/Subscription');
+    }
+
+    public function pay(Request $request)
+    {
+        $validator = Validator::make($request->all(),[
+            'amount' => 'required',
+            'reference' => 'required',
+            'email' => 'required'
+        ]);
+
+        if($validator->fails()) 
+        {
+            return back()->withInput();
+        }
+
+        DB::table('payments')->insert([
+            'amount' => $request->amount,
+            'email' => $request->email,
+            'reference' => $request->reference
+        ]);
     }
 }
